@@ -37,6 +37,13 @@
 		FE85D490228F023000AD146B /* UIViewController+erroArlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D48F228F023000AD146B /* UIViewController+erroArlert.swift */; };
 		FE85D492228F0C2F00AD146B /* ImageUploadingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D491228F0C2F00AD146B /* ImageUploadingOperation.swift */; };
 		FE85D495228F11A900AD146B /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D494228F11A900AD146B /* AsyncOperation.swift */; };
+		FE85D498228F178800AD146B /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D497228F178800AD146B /* DataBaseService.swift */; };
+		FE85D49E228F188200AD146B /* DataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE85D49C228F188200AD146B /* DataModels.xcdatamodeld */; };
+		FE85D4C1228F19E900AD146B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D4C0228F19E900AD146B /* CoreDataManager.swift */; };
+		FE85D4C4228F1E6A00AD146B /* ModelConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D4C3228F1E6A00AD146B /* ModelConstructor.swift */; };
+		FE85D4C6228F1F4C00AD146B /* AssetLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D4C5228F1F4C00AD146B /* AssetLink.swift */; };
+		FE85D4C8228F219200AD146B /* DBLink+constructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D4C7228F219200AD146B /* DBLink+constructor.swift */; };
+		FE85D4CA228F22F900AD146B /* AssetLink+dataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D4C9228F22F900AD146B /* AssetLink+dataBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +79,13 @@
 		FE85D48F228F023000AD146B /* UIViewController+erroArlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+erroArlert.swift"; sourceTree = "<group>"; };
 		FE85D491228F0C2F00AD146B /* ImageUploadingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadingOperation.swift; sourceTree = "<group>"; };
 		FE85D494228F11A900AD146B /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		FE85D497228F178800AD146B /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
+		FE85D49D228F188200AD146B /* DataModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModels.xcdatamodel; sourceTree = "<group>"; };
+		FE85D4C0228F19E900AD146B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FE85D4C3228F1E6A00AD146B /* ModelConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConstructor.swift; sourceTree = "<group>"; };
+		FE85D4C5228F1F4C00AD146B /* AssetLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLink.swift; sourceTree = "<group>"; };
+		FE85D4C7228F219200AD146B /* DBLink+constructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBLink+constructor.swift"; sourceTree = "<group>"; };
+		FE85D4C9228F22F900AD146B /* AssetLink+dataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssetLink+dataBase.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +130,7 @@
 		FE413E6A228E935600094EB2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE85D49C228F188200AD146B /* DataModels.xcdatamodeld */,
 				FE413E9B228E9B8000094EB2 /* Extensions */,
 				FE413E6B228E935F00094EB2 /* Resources */,
 				FE413E5D228E91ED00094EB2 /* Assets.xcassets */,
@@ -197,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				FE85D493228F119800AD146B /* Operations */,
+				FE85D496228F176E00AD146B /* DataBase */,
 				FE85D474228ECD3A00AD146B /* Networking */,
 				FE413EA2228EA09F00094EB2 /* PhotoService.swift */,
 			);
@@ -216,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				FE85D470228EC50B00AD146B /* DisplayedAsset.swift */,
+				FE85D4C5228F1F4C00AD146B /* AssetLink.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,6 +282,26 @@
 				FE85D491228F0C2F00AD146B /* ImageUploadingOperation.swift */,
 			);
 			path = Operations;
+			sourceTree = "<group>";
+		};
+		FE85D496228F176E00AD146B /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				FE85D4C2228F1E6000AD146B /* Models */,
+				FE85D497228F178800AD146B /* DataBaseService.swift */,
+				FE85D4C0228F19E900AD146B /* CoreDataManager.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		FE85D4C2228F1E6000AD146B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE85D4C3228F1E6A00AD146B /* ModelConstructor.swift */,
+				FE85D4C7228F219200AD146B /* DBLink+constructor.swift */,
+				FE85D4C9228F22F900AD146B /* AssetLink+dataBase.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,15 +376,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE85D49E228F188200AD146B /* DataModels.xcdatamodeld in Sources */,
 				FE85D46E228EB99800AD146B /* ImagesListViewController.swift in Sources */,
 				FE85D482228ED17100AD146B /* Data+decodable.swift in Sources */,
 				FE85D478228ECD6F00AD146B /* InAppURL.swift in Sources */,
+				FE85D4CA228F22F900AD146B /* AssetLink+dataBase.swift in Sources */,
 				FE85D485228ED39600AD146B /* UploadImageResponse.swift in Sources */,
 				FE413EA3228EA09F00094EB2 /* PhotoService.swift in Sources */,
 				FE413E98228E9ACD00094EB2 /* MainCoordinator.swift in Sources */,
 				FE85D47C228ECE6F00AD146B /* GenericError.swift in Sources */,
 				FE85D480228ED02B00AD146B /* RequestRealizer.swift in Sources */,
 				FE413E9A228E9AEA00094EB2 /* ImagesListCoordinator.swift in Sources */,
+				FE85D4C4228F1E6A00AD146B /* ModelConstructor.swift in Sources */,
 				FE413EAA228EACB400094EB2 /* UICollectionView+cell.swift in Sources */,
 				FE413EAC228EACE000094EB2 /* UITableView+cell.swift in Sources */,
 				FE85D47E228ECE8800AD146B /* String+localization.swift in Sources */,
@@ -359,12 +399,16 @@
 				FE85D490228F023000AD146B /* UIViewController+erroArlert.swift in Sources */,
 				FE413EA7228EAC2D00094EB2 /* ImageCollectionViewCell.swift in Sources */,
 				FE85D471228EC50B00AD146B /* DisplayedAsset.swift in Sources */,
+				FE85D498228F178800AD146B /* DataBaseService.swift in Sources */,
 				FE413E9D228E9BA000094EB2 /* UIViewController+storyboard.swift in Sources */,
+				FE85D4C8228F219200AD146B /* DBLink+constructor.swift in Sources */,
 				FE85D476228ECD5800AD146B /* Request.swift in Sources */,
 				FE85D473228ECD0A00AD146B /* NetworkService.swift in Sources */,
+				FE85D4C1228F19E900AD146B /* CoreDataManager.swift in Sources */,
 				FE85D48B228EF36A00AD146B /* UploadImageRequest.swift in Sources */,
 				FE85D48E228F01E100AD146B /* Errorable.swift in Sources */,
 				FE413EA0228E9EBC00094EB2 /* ImageListPresenter.swift in Sources */,
+				FE85D4C6228F1F4C00AD146B /* AssetLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +610,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE85D49C228F188200AD146B /* DataModels.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE85D49D228F188200AD146B /* DataModels.xcdatamodel */,
+			);
+			currentVersion = FE85D49D228F188200AD146B /* DataModels.xcdatamodel */;
+			path = DataModels.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE413E4B228E91EB00094EB2 /* Project object */;
 }

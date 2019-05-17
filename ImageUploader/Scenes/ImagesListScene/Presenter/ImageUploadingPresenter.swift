@@ -17,6 +17,8 @@ class ImageUploadingPresenter {
     private let networkService: NetworkService
     private let queue = OperationQueue()
     
+    private let dbService = DataBaseService(manager: CoreDataManager())
+    
     init(networkService: NetworkService) {
         self.networkService = networkService
         queue.maxConcurrentOperationCount = 1
@@ -25,7 +27,17 @@ class ImageUploadingPresenter {
     
     func uploadAsset(_ asset: DisplayedAsset, indexPath: IndexPath) {
         
-        guard asset.state != .uploaded, let requestData = UploadImageRequestData(asset: asset) else {
+        if asset.state == .uploaded {
+            return
+        }
+        
+        if dbService.linkExists(id: asset.id) {
+            //TODO: Show alert
+            asset.state = .uploaded
+            return
+        }
+        
+        guard let requestData = UploadImageRequestData(asset: asset) else {
             return
         }
         
@@ -39,23 +51,18 @@ class ImageUploadingPresenter {
             OperationQueue.main.addOperation { [weak self] in
                 asset.state = .uploaded
                 self?.uploadingAssetChanged(indexPath)
-                self?.handle(operation.result!)
+                
+                if let error = operation.result?.error {
+                    self?.errorOccurred(error)
+                    return
+                }
+                
+                if let value = operation.result?.value {
+                    self?.dbService.save(link: AssetLink(value: value.link, id: asset.id))
+                }
             }
         }
         
         queue.addOperation(operation)
-    }
-    
-    private func handle(_ response: RequestResult<UploadImageResponse>) {
-        
-        if let error = response.error {
-            errorOccurred(error)
-            return
-        }
-        
-        //TODO: Save link
-        if let value = response.value {
-            print(value.link)
-        }
     }
 }

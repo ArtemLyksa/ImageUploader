@@ -21,8 +21,10 @@ class ImagesListViewController: UIViewController, Errorable {
     }
     
     private func confiureScene() {
-        uploadingPresenter.uploadingAssetChanged = { [weak self] indexPath in
-            self?.collectionView.reloadItems(at: [indexPath])
+        uploadingPresenter.uploadingAssetChanged = { indexPath in
+            OperationQueue.main.addOperation({ [weak self] in
+                self?.collectionView.reloadItems(at: [indexPath])
+            })
         }
         
         uploadingPresenter.errorOccurred = handleError
