@@ -14,7 +14,7 @@ struct ImagesListPresenter {
     private let photoService: PhotoService
     
     lazy var assets: [PHAsset] = {
-        return self.photoService.fetchAllAssets()
+        return photoService.fetchAllAssets()
     }()
     
     init(photoService: PhotoService) {
