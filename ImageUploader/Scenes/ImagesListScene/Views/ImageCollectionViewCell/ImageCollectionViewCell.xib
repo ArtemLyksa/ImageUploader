@@ -19,12 +19,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="135" height="79"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NJZ-9R-Htw">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NJZ-9R-Htw">
                         <rect key="frame" x="0.0" y="0.0" width="135" height="79"/>
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.044739867109999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="NJZ-9R-Htw" secondAttribute="trailing" id="K5n-41-fp2"/>
                 <constraint firstItem="NJZ-9R-Htw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Yvi-Wz-ngu"/>

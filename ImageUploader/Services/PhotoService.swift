@@ -36,7 +36,9 @@ struct PhotoService {
         
         DispatchQueue.global(qos: qos).async {
             self.imageManager.requestImage(for: asset, targetSize: size, contentMode: contentMode, options: nil) { image, _ in
-                result(image)
+                DispatchQueue.main.async {
+                    result(image)
+                }
             }
         }
     }

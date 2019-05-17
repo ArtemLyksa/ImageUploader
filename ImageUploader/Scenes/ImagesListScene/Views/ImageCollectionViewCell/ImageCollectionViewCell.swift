@@ -12,8 +12,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var imageView: UIImageView!
     
-    func configure(with image: UIImage) {
-        imageView.image = image
+    func configure(with asset: DisplayedAsset) {
+        imageView.image = asset.image
     }
 
 }

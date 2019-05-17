@@ -27,6 +27,11 @@ extension ImagesListViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.getCell(ofType: ImageCollectionViewCell.self, for: indexPath)
+        
+        presenter.asset(for: indexPath, size: cell.frame.size) { image in
+            cell.configure(with: image)
+        }
+        
         return cell
     }
 

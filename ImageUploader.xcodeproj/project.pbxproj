@@ -22,6 +22,7 @@
 		FE413EAA228EACB400094EB2 /* UICollectionView+cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413EA9228EACB400094EB2 /* UICollectionView+cell.swift */; };
 		FE413EAC228EACE000094EB2 /* UITableView+cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413EAB228EACE000094EB2 /* UITableView+cell.swift */; };
 		FE85D46E228EB99800AD146B /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D46D228EB99800AD146B /* ImagesListViewController.swift */; };
+		FE85D471228EC50B00AD146B /* DisplayedAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D470228EC50B00AD146B /* DisplayedAsset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FE413EA9228EACB400094EB2 /* UICollectionView+cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+cell.swift"; sourceTree = "<group>"; };
 		FE413EAB228EACE000094EB2 /* UITableView+cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+cell.swift"; sourceTree = "<group>"; };
 		FE85D46D228EB99800AD146B /* ImagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
+		FE85D470228EC50B00AD146B /* DisplayedAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedAsset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		FE413E90228E9A7100094EB2 /* ImagesListScene */ = {
 			isa = PBXGroup;
 			children = (
+				FE85D46F228EC36C00AD146B /* Models */,
 				FE413E91228E9A7800094EB2 /* Views */,
 				FE413E9E228E9EAB00094EB2 /* Presenter */,
 			);
@@ -172,6 +175,14 @@
 				FE413EA6228EAC2D00094EB2 /* ImageCollectionViewCell.xib */,
 			);
 			path = ImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		FE85D46F228EC36C00AD146B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE85D470228EC50B00AD146B /* DisplayedAsset.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 				FE413E57228E91EB00094EB2 /* AppDelegate.swift in Sources */,
 				FE413E96228E9AA100094EB2 /* Coordinator.swift in Sources */,
 				FE413EA7228EAC2D00094EB2 /* ImageCollectionViewCell.swift in Sources */,
+				FE85D471228EC50B00AD146B /* DisplayedAsset.swift in Sources */,
 				FE413E9D228E9BA000094EB2 /* UIViewController+storyboard.swift in Sources */,
 				FE413EA0228E9EBC00094EB2 /* ImageListPresenter.swift in Sources */,
 			);
