@@ -16,6 +16,8 @@
 		FE413E98228E9ACD00094EB2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E97228E9ACD00094EB2 /* MainCoordinator.swift */; };
 		FE413E9A228E9AEA00094EB2 /* ImagesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E99228E9AEA00094EB2 /* ImagesListCoordinator.swift */; };
 		FE413E9D228E9BA000094EB2 /* UIViewController+storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E9C228E9BA000094EB2 /* UIViewController+storyboard.swift */; };
+		FE413EA0228E9EBC00094EB2 /* ImageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E9F228E9EBC00094EB2 /* ImageListPresenter.swift */; };
+		FE413EA3228EA09F00094EB2 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413EA2228EA09F00094EB2 /* PhotoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		FE413E97228E9ACD00094EB2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FE413E99228E9AEA00094EB2 /* ImagesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCoordinator.swift; sourceTree = "<group>"; };
 		FE413E9C228E9BA000094EB2 /* UIViewController+storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+storyboard.swift"; sourceTree = "<group>"; };
+		FE413E9F228E9EBC00094EB2 /* ImageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenter.swift; sourceTree = "<group>"; };
+		FE413EA2228EA09F00094EB2 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				FE413E56228E91EB00094EB2 /* AppDelegate.swift */,
 				FE413E94228E9A9000094EB2 /* Coordinators */,
 				FE413E8F228E9A1800094EB2 /* Scenes */,
+				FE413EA1228EA08D00094EB2 /* Services */,
 				FE413E6A228E935600094EB2 /* Supporting Files */,
 			);
 			path = ImageUploader;
@@ -102,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				FE413E91228E9A7800094EB2 /* Views */,
+				FE413E9E228E9EAB00094EB2 /* Presenter */,
 			);
 			path = ImagesListScene;
 			sourceTree = "<group>";
@@ -130,6 +136,22 @@
 				FE413E9C228E9BA000094EB2 /* UIViewController+storyboard.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FE413E9E228E9EAB00094EB2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FE413E9F228E9EBC00094EB2 /* ImageListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FE413EA1228EA08D00094EB2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FE413EA2228EA09F00094EB2 /* PhotoService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,12 +225,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE413EA3228EA09F00094EB2 /* PhotoService.swift in Sources */,
 				FE413E93228E9A8700094EB2 /* ImagesListViewController.swift in Sources */,
 				FE413E98228E9ACD00094EB2 /* MainCoordinator.swift in Sources */,
 				FE413E9A228E9AEA00094EB2 /* ImagesListCoordinator.swift in Sources */,
 				FE413E57228E91EB00094EB2 /* AppDelegate.swift in Sources */,
 				FE413E96228E9AA100094EB2 /* Coordinator.swift in Sources */,
 				FE413E9D228E9BA000094EB2 /* UIViewController+storyboard.swift in Sources */,
+				FE413EA0228E9EBC00094EB2 /* ImageListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@ struct ImagesListCoordinator: Coordinator {
     init(presenter: UINavigationController) {
         self.presenter = presenter
         self.viewController = ImagesListViewController.instantiate()
+        viewController.presenter = ImagesListPresenter(photoService: PhotoService())
     }
     
     func start() {
