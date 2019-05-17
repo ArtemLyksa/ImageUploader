@@ -32,7 +32,9 @@
 		FE85D482228ED17100AD146B /* Data+decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D481228ED17100AD146B /* Data+decodable.swift */; };
 		FE85D485228ED39600AD146B /* UploadImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D484228ED39600AD146B /* UploadImageResponse.swift */; };
 		FE85D487228ED51600AD146B /* ImageUploadingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D486228ED51600AD146B /* ImageUploadingPresenter.swift */; };
-		FE85D489228ED54A00AD146B /* UploadingAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D488228ED54A00AD146B /* UploadingAsset.swift */; };
+		FE85D48B228EF36A00AD146B /* UploadImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D48A228EF36A00AD146B /* UploadImageRequest.swift */; };
+		FE85D48E228F01E100AD146B /* Errorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D48D228F01E100AD146B /* Errorable.swift */; };
+		FE85D490228F023000AD146B /* UIViewController+erroArlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D48F228F023000AD146B /* UIViewController+erroArlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +65,9 @@
 		FE85D481228ED17100AD146B /* Data+decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+decodable.swift"; sourceTree = "<group>"; };
 		FE85D484228ED39600AD146B /* UploadImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageResponse.swift; sourceTree = "<group>"; };
 		FE85D486228ED51600AD146B /* ImageUploadingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadingPresenter.swift; sourceTree = "<group>"; };
-		FE85D488228ED54A00AD146B /* UploadingAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingAsset.swift; sourceTree = "<group>"; };
+		FE85D48A228EF36A00AD146B /* UploadImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageRequest.swift; sourceTree = "<group>"; };
+		FE85D48D228F01E100AD146B /* Errorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errorable.swift; sourceTree = "<group>"; };
+		FE85D48F228F023000AD146B /* UIViewController+erroArlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+erroArlert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		FE413E8F228E9A1800094EB2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FE85D48C228F01CB00AD146B /* Shared */,
 				FE413E90228E9A7100094EB2 /* ImagesListScene */,
 			);
 			path = Scenes;
@@ -166,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				FE413E9C228E9BA000094EB2 /* UIViewController+storyboard.swift */,
+				FE85D48F228F023000AD146B /* UIViewController+erroArlert.swift */,
 				FE413EA9228EACB400094EB2 /* UICollectionView+cell.swift */,
 				FE413EAB228EACE000094EB2 /* UITableView+cell.swift */,
 				FE85D47D228ECE8800AD146B /* String+localization.swift */,
@@ -205,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				FE85D470228EC50B00AD146B /* DisplayedAsset.swift */,
-				FE85D488228ED54A00AD146B /* UploadingAsset.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,9 +239,18 @@
 		FE85D483228ED38000AD146B /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				FE85D48A228EF36A00AD146B /* UploadImageRequest.swift */,
 				FE85D484228ED39600AD146B /* UploadImageResponse.swift */,
 			);
 			path = APIModels;
+			sourceTree = "<group>";
+		};
+		FE85D48C228F01CB00AD146B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FE85D48D228F01E100AD146B /* Errorable.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,12 +340,14 @@
 				FE413E57228E91EB00094EB2 /* AppDelegate.swift in Sources */,
 				FE413E96228E9AA100094EB2 /* Coordinator.swift in Sources */,
 				FE85D487228ED51600AD146B /* ImageUploadingPresenter.swift in Sources */,
-				FE85D489228ED54A00AD146B /* UploadingAsset.swift in Sources */,
+				FE85D490228F023000AD146B /* UIViewController+erroArlert.swift in Sources */,
 				FE413EA7228EAC2D00094EB2 /* ImageCollectionViewCell.swift in Sources */,
 				FE85D471228EC50B00AD146B /* DisplayedAsset.swift in Sources */,
 				FE413E9D228E9BA000094EB2 /* UIViewController+storyboard.swift in Sources */,
 				FE85D476228ECD5800AD146B /* Request.swift in Sources */,
 				FE85D473228ECD0A00AD146B /* NetworkService.swift in Sources */,
+				FE85D48B228EF36A00AD146B /* UploadImageRequest.swift in Sources */,
+				FE85D48E228F01E100AD146B /* Errorable.swift in Sources */,
 				FE413EA0228E9EBC00094EB2 /* ImageListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

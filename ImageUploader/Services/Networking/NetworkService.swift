@@ -23,10 +23,13 @@ class NetworkService {
         
     }
     
-    func upload(data: Data) {
-        let request = Request(url: ImgGurURL.upload, method: .post, body: data, token: token)
+    func upload(data: UploadImageRequestData, _ completion: @escaping (RequestResult<UploadImageResponse>) -> Void) {
+        
+        let reqdata = try! JSONEncoder().encode(data)
+        let request = Request(url: ImgGurURL.upload, method: .post, body: reqdata, token: token)
         return realizer.realize(request: request, { (result: RequestResult<UploadImageResponse>) in
-            print(result.value ?? "")
+            completion(result)
         })
+        
     }
 }

@@ -9,15 +9,16 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     
     func configure(with asset: DisplayedAsset) {
         imageView.image = asset.image
+        configure(with: asset as Uploadable)
     }
-
-    func configure(with uploadingAsset: UploadingAsset) {
+    
+    private func configure(with uploadingAsset: Uploadable) {
         if uploadingAsset.state == .uploading {
             activityIndicatorView.startAnimating()
             activityIndicatorView.isHidden = false

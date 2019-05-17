@@ -42,11 +42,14 @@ struct Request {
         
         if let token = token {
             request.setValue(token, forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         
         if let body = body {
             request.httpBody = body
         }
+        
+        request.httpMethod = method.rawValue
         
         return request
     }

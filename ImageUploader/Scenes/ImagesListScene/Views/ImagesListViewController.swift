@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImagesListViewController: UIViewController {
+class ImagesListViewController: UIViewController, Errorable {
     
     var presenter: ImagesListPresenter!
     var uploadingPresenter: ImageUploadingPresenter!
@@ -17,7 +17,15 @@ class ImagesListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        confiureScene()
+    }
+    
+    private func confiureScene() {
+        uploadingPresenter.uploadingAssetChanged = { [weak self] indexPath in
+            self?.collectionView.reloadItems(at: [indexPath])
+        }
+        
+        uploadingPresenter.errorOccurred = handleError
     }
 }
 
@@ -43,7 +51,8 @@ extension ImagesListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        uploadingPresenter.uploadAsset(presenter.assets[indexPath.row])
+        uploadingPresenter.uploadAsset(presenter.assets[indexPath.row],
+                                       indexPath: indexPath)
     }
     
 }
