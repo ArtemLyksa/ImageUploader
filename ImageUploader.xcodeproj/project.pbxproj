@@ -35,6 +35,8 @@
 		FE85D48B228EF36A00AD146B /* UploadImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D48A228EF36A00AD146B /* UploadImageRequest.swift */; };
 		FE85D48E228F01E100AD146B /* Errorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D48D228F01E100AD146B /* Errorable.swift */; };
 		FE85D490228F023000AD146B /* UIViewController+erroArlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D48F228F023000AD146B /* UIViewController+erroArlert.swift */; };
+		FE85D492228F0C2F00AD146B /* ImageUploadingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D491228F0C2F00AD146B /* ImageUploadingOperation.swift */; };
+		FE85D495228F11A900AD146B /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D494228F11A900AD146B /* AsyncOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		FE85D48A228EF36A00AD146B /* UploadImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageRequest.swift; sourceTree = "<group>"; };
 		FE85D48D228F01E100AD146B /* Errorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errorable.swift; sourceTree = "<group>"; };
 		FE85D48F228F023000AD146B /* UIViewController+erroArlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+erroArlert.swift"; sourceTree = "<group>"; };
+		FE85D491228F0C2F00AD146B /* ImageUploadingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadingOperation.swift; sourceTree = "<group>"; };
+		FE85D494228F11A900AD146B /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,7 @@
 		FE413EA1228EA08D00094EB2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FE85D493228F119800AD146B /* Operations */,
 				FE85D474228ECD3A00AD146B /* Networking */,
 				FE413EA2228EA09F00094EB2 /* PhotoService.swift */,
 			);
@@ -251,6 +256,15 @@
 				FE85D48D228F01E100AD146B /* Errorable.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		FE85D493228F119800AD146B /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				FE85D494228F11A900AD146B /* AsyncOperation.swift */,
+				FE85D491228F0C2F00AD146B /* ImageUploadingOperation.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,7 +351,9 @@
 				FE413EAA228EACB400094EB2 /* UICollectionView+cell.swift in Sources */,
 				FE413EAC228EACE000094EB2 /* UITableView+cell.swift in Sources */,
 				FE85D47E228ECE8800AD146B /* String+localization.swift in Sources */,
+				FE85D492228F0C2F00AD146B /* ImageUploadingOperation.swift in Sources */,
 				FE413E57228E91EB00094EB2 /* AppDelegate.swift in Sources */,
+				FE85D495228F11A900AD146B /* AsyncOperation.swift in Sources */,
 				FE413E96228E9AA100094EB2 /* Coordinator.swift in Sources */,
 				FE85D487228ED51600AD146B /* ImageUploadingPresenter.swift in Sources */,
 				FE85D490228F023000AD146B /* UIViewController+erroArlert.swift in Sources */,

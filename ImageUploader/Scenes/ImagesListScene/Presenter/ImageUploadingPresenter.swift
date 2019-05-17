@@ -10,15 +10,17 @@ import UIKit
 
 class ImageUploadingPresenter {
     
-    private let networkService: NetworkService
-    private var uploadingImages: [DisplayedAsset] = []
-    
     var uploadingAssetChanged: (IndexPath) -> (Void) = { _ in }
     var errorOccurred: (GenericError) -> (Void) = { _ in }
     
-    //TODO: Add a queue
+    private var uploadingImages: [DisplayedAsset] = []
+    private let networkService: NetworkService
+    private let queue = OperationQueue()
+    
     init(networkService: NetworkService) {
         self.networkService = networkService
+        queue.maxConcurrentOperationCount = 1
+        queue.qualityOfService = .background
     }
     
     func uploadAsset(_ asset: DisplayedAsset, indexPath: IndexPath) {
@@ -31,13 +33,17 @@ class ImageUploadingPresenter {
         uploadingImages.append(asset)
         uploadingAssetChanged(indexPath)
         
-        networkService.upload(data: requestData) { [weak self] response in
-            DispatchQueue.main.async {
+        let operation = ImageUploadingOperation(requestData: requestData, networkService: networkService)
+        
+        operation.completionBlock = {
+            OperationQueue.main.addOperation { [weak self] in
                 asset.state = .uploaded
                 self?.uploadingAssetChanged(indexPath)
-                self?.handle(response)
+                self?.handle(operation.result!)
             }
         }
+        
+        queue.addOperation(operation)
     }
     
     private func handle(_ response: RequestResult<UploadImageResponse>) {
