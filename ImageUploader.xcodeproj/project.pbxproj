@@ -11,7 +11,6 @@
 		FE413E5C228E91EB00094EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE413E5A228E91EB00094EB2 /* Main.storyboard */; };
 		FE413E5E228E91ED00094EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE413E5D228E91ED00094EB2 /* Assets.xcassets */; };
 		FE413E61228E91ED00094EB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE413E5F228E91ED00094EB2 /* LaunchScreen.storyboard */; };
-		FE413E93228E9A8700094EB2 /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E92228E9A8700094EB2 /* ImagesListViewController.swift */; };
 		FE413E96228E9AA100094EB2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E95228E9AA100094EB2 /* Coordinator.swift */; };
 		FE413E98228E9ACD00094EB2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E97228E9ACD00094EB2 /* MainCoordinator.swift */; };
 		FE413E9A228E9AEA00094EB2 /* ImagesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E99228E9AEA00094EB2 /* ImagesListCoordinator.swift */; };
@@ -22,6 +21,7 @@
 		FE413EA8228EAC2D00094EB2 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE413EA6228EAC2D00094EB2 /* ImageCollectionViewCell.xib */; };
 		FE413EAA228EACB400094EB2 /* UICollectionView+cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413EA9228EACB400094EB2 /* UICollectionView+cell.swift */; };
 		FE413EAC228EACE000094EB2 /* UITableView+cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413EAB228EACE000094EB2 /* UITableView+cell.swift */; };
+		FE85D46E228EB99800AD146B /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D46D228EB99800AD146B /* ImagesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,6 @@
 		FE413E5D228E91ED00094EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE413E60228E91ED00094EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE413E62228E91ED00094EB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE413E92228E9A8700094EB2 /* ImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagesListViewController.swift; path = ../../../../../../../../Documents/ImagesListViewController.swift; sourceTree = "<group>"; };
 		FE413E95228E9AA100094EB2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FE413E97228E9ACD00094EB2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FE413E99228E9AEA00094EB2 /* ImagesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCoordinator.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		FE413EA6228EAC2D00094EB2 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FE413EA9228EACB400094EB2 /* UICollectionView+cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+cell.swift"; sourceTree = "<group>"; };
 		FE413EAB228EACE000094EB2 /* UITableView+cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+cell.swift"; sourceTree = "<group>"; };
+		FE85D46D228EB99800AD146B /* ImagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 		FE413E91228E9A7800094EB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FE413E92228E9A8700094EB2 /* ImagesListViewController.swift */,
+				FE85D46D228EB99800AD146B /* ImagesListViewController.swift */,
 				FE413EA4228EAC1000094EB2 /* ImageCollectionViewCell */,
 			);
 			path = Views;
@@ -246,8 +246,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE85D46E228EB99800AD146B /* ImagesListViewController.swift in Sources */,
 				FE413EA3228EA09F00094EB2 /* PhotoService.swift in Sources */,
-				FE413E93228E9A8700094EB2 /* ImagesListViewController.swift in Sources */,
 				FE413E98228E9ACD00094EB2 /* MainCoordinator.swift in Sources */,
 				FE413E9A228E9AEA00094EB2 /* ImagesListCoordinator.swift in Sources */,
 				FE413EAA228EACB400094EB2 /* UICollectionView+cell.swift in Sources */,
