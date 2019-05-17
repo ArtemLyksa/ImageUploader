@@ -12,6 +12,9 @@ import Photos
 class DisplayedAsset {
     let asset: PHAsset
     var image: UIImage?
+    var id: String {
+        return asset.localIdentifier
+    }
     
     init(asset: PHAsset) {
         self.asset = asset

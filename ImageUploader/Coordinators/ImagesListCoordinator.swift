@@ -17,6 +17,7 @@ struct ImagesListCoordinator: Coordinator {
         self.presenter = presenter
         self.viewController = ImagesListViewController.instantiate()
         viewController.presenter = ImagesListPresenter(photoService: PhotoService())
+        viewController.uploadingPresenter = ImageUploadingPresenter(networkService: NetworkService())
     }
     
     func start() {

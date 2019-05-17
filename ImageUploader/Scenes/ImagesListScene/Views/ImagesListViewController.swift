@@ -11,6 +11,8 @@ import UIKit
 class ImagesListViewController: UIViewController {
     
     var presenter: ImagesListPresenter!
+    var uploadingPresenter: ImageUploadingPresenter!
+    
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -41,7 +43,7 @@ extension ImagesListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        //TODO: Upload image to "imgur"
+        uploadingPresenter.uploadAsset(presenter.assets[indexPath.row])
     }
     
 }
