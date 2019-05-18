@@ -14,6 +14,7 @@ protocol DataBaseManager {
     func save(link: AssetLink)
     func fetchLinks() -> [AssetLink]
     func linkExists(id: String) -> Bool
+    func synchronize()
 }
 
 class DataBaseService {
@@ -33,5 +34,9 @@ class DataBaseService {
     
     func linkExists(id: String) -> Bool {
         return manager.linkExists(id: id)
+    }
+    
+    func synchronize() {
+        manager.synchronize()
     }
 }

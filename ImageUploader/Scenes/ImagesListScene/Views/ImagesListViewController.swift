@@ -12,12 +12,14 @@ class ImagesListViewController: UIViewController, Errorable {
     
     var presenter: ImagesListPresenter!
     var uploadingPresenter: ImageUploadingPresenter!
+    var navigationDelegate: ImagesListNavigationDelegate?
     
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         confiureScene()
+        setupNavigationBar()
     }
     
     private func confiureScene() {
@@ -26,17 +28,28 @@ class ImagesListViewController: UIViewController, Errorable {
                 self?.collectionView.reloadItems(at: [indexPath])
             })
         }
-        
         uploadingPresenter.errorOccurred = handleError
+    }
+    
+    private func setupNavigationBar() {
+        let linksBarButton = UIBarButtonItem(title: "Links".localized,
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(linksBarButtonAction(sender:)))
+        navigationItem.rightBarButtonItem = linksBarButton
+    }
+    
+     @objc private func linksBarButtonAction(sender: UIBarButtonItem) {
+        navigationDelegate?.navigateToLinksScene()
     }
 }
 
 extension ImagesListViewController: UICollectionViewDataSource {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.assets.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.getCell(ofType: ImageCollectionViewCell.self, for: indexPath)
         
@@ -46,7 +59,6 @@ extension ImagesListViewController: UICollectionViewDataSource {
         
         return cell
     }
-
 }
 
 extension ImagesListViewController: UICollectionViewDelegate {
@@ -56,7 +68,6 @@ extension ImagesListViewController: UICollectionViewDelegate {
         uploadingPresenter.uploadAsset(presenter.assets[indexPath.row],
                                        indexPath: indexPath)
     }
-    
 }
 
 extension ImagesListViewController: UICollectionViewDelegateFlowLayout {

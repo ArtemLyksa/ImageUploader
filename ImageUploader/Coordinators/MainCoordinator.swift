@@ -10,15 +10,14 @@ import UIKit
 
 struct MainCoordinator: Coordinator {
     
-    private let rootViewController: UINavigationController
-    
     private let window: UIWindow?
+    private let rootViewController: UINavigationController
     private let imagesListCoordinator: ImagesListCoordinator
     
-    init(window: UIWindow?) {
+    init(window: UIWindow?, dbService: DataBaseService) {
         self.window = window
         self.rootViewController = UINavigationController()
-        self.imagesListCoordinator = ImagesListCoordinator(presenter: rootViewController)
+        self.imagesListCoordinator = ImagesListCoordinator(presenter: rootViewController, dbService: dbService)
     }
     
     func start() {

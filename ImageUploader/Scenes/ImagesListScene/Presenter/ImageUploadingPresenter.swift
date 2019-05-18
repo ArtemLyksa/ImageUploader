@@ -17,10 +17,11 @@ class ImageUploadingPresenter {
     private let networkService: NetworkService
     private let queue = OperationQueue()
     
-    private let dbService = DataBaseService(manager: CoreDataManager())
+    private let dbService: DataBaseService
     
-    init(networkService: NetworkService) {
+    init(networkService: NetworkService, dbService: DataBaseService) {
         self.networkService = networkService
+        self.dbService = dbService
         queue.maxConcurrentOperationCount = 1
         queue.qualityOfService = .background
     }

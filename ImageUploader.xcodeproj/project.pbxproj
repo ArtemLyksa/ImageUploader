@@ -44,6 +44,12 @@
 		FE85D4C6228F1F4C00AD146B /* AssetLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D4C5228F1F4C00AD146B /* AssetLink.swift */; };
 		FE85D4C8228F219200AD146B /* DBLink+constructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D4C7228F219200AD146B /* DBLink+constructor.swift */; };
 		FE85D4CA228F22F900AD146B /* AssetLink+dataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85D4C9228F22F900AD146B /* AssetLink+dataBase.swift */; };
+		FEC86DB92290405F0031FB18 /* DisplayedLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC86DB82290405F0031FB18 /* DisplayedLink.swift */; };
+		FEC86DBB229040A90031FB18 /* LinksListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC86DBA229040A90031FB18 /* LinksListPresenter.swift */; };
+		FEC86DBD229041520031FB18 /* LinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC86DBC229041520031FB18 /* LinksListViewController.swift */; };
+		FEC86DC1229041B70031FB18 /* LinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC86DBF229041B70031FB18 /* LinkTableViewCell.swift */; };
+		FEC86DC2229041B70031FB18 /* LinkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC86DC0229041B70031FB18 /* LinkTableViewCell.xib */; };
+		FEC86DC4229043630031FB18 /* LinksListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC86DC3229043630031FB18 /* LinksListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +92,12 @@
 		FE85D4C5228F1F4C00AD146B /* AssetLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLink.swift; sourceTree = "<group>"; };
 		FE85D4C7228F219200AD146B /* DBLink+constructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBLink+constructor.swift"; sourceTree = "<group>"; };
 		FE85D4C9228F22F900AD146B /* AssetLink+dataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssetLink+dataBase.swift"; sourceTree = "<group>"; };
+		FEC86DB82290405F0031FB18 /* DisplayedLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedLink.swift; sourceTree = "<group>"; };
+		FEC86DBA229040A90031FB18 /* LinksListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksListPresenter.swift; sourceTree = "<group>"; };
+		FEC86DBC229041520031FB18 /* LinksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksListViewController.swift; sourceTree = "<group>"; };
+		FEC86DBF229041B70031FB18 /* LinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkTableViewCell.swift; sourceTree = "<group>"; };
+		FEC86DC0229041B70031FB18 /* LinkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkTableViewCell.xib; sourceTree = "<group>"; };
+		FEC86DC3229043630031FB18 /* LinksListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +165,7 @@
 			children = (
 				FE85D48C228F01CB00AD146B /* Shared */,
 				FE413E90228E9A7100094EB2 /* ImagesListScene */,
+				FEC86DB422903CDB0031FB18 /* LinksListScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -182,6 +195,7 @@
 				FE413E95228E9AA100094EB2 /* Coordinator.swift */,
 				FE413E97228E9ACD00094EB2 /* MainCoordinator.swift */,
 				FE413E99228E9AEA00094EB2 /* ImagesListCoordinator.swift */,
+				FEC86DC3229043630031FB18 /* LinksListCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -304,6 +318,50 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FEC86DB422903CDB0031FB18 /* LinksListScene */ = {
+			isa = PBXGroup;
+			children = (
+				FEC86DB622903D0A0031FB18 /* Model */,
+				FEC86DB522903D000031FB18 /* View */,
+				FEC86DB722903D0F0031FB18 /* Presenter */,
+			);
+			path = LinksListScene;
+			sourceTree = "<group>";
+		};
+		FEC86DB522903D000031FB18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEC86DBC229041520031FB18 /* LinksListViewController.swift */,
+				FEC86DBE2290419F0031FB18 /* LinkTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEC86DB622903D0A0031FB18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEC86DB82290405F0031FB18 /* DisplayedLink.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEC86DB722903D0F0031FB18 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FEC86DBA229040A90031FB18 /* LinksListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FEC86DBE2290419F0031FB18 /* LinkTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FEC86DBF229041B70031FB18 /* LinkTableViewCell.swift */,
+				FEC86DC0229041B70031FB18 /* LinkTableViewCell.xib */,
+			);
+			path = LinkTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC86DC2229041B70031FB18 /* LinkTableViewCell.xib in Resources */,
 				FE413E61228E91ED00094EB2 /* LaunchScreen.storyboard in Resources */,
 				FE413E5E228E91ED00094EB2 /* Assets.xcassets in Resources */,
 				FE413EA8228EAC2D00094EB2 /* ImageCollectionViewCell.xib in Resources */,
@@ -378,10 +437,12 @@
 			files = (
 				FE85D49E228F188200AD146B /* DataModels.xcdatamodeld in Sources */,
 				FE85D46E228EB99800AD146B /* ImagesListViewController.swift in Sources */,
+				FEC86DC4229043630031FB18 /* LinksListCoordinator.swift in Sources */,
 				FE85D482228ED17100AD146B /* Data+decodable.swift in Sources */,
 				FE85D478228ECD6F00AD146B /* InAppURL.swift in Sources */,
 				FE85D4CA228F22F900AD146B /* AssetLink+dataBase.swift in Sources */,
 				FE85D485228ED39600AD146B /* UploadImageResponse.swift in Sources */,
+				FEC86DC1229041B70031FB18 /* LinkTableViewCell.swift in Sources */,
 				FE413EA3228EA09F00094EB2 /* PhotoService.swift in Sources */,
 				FE413E98228E9ACD00094EB2 /* MainCoordinator.swift in Sources */,
 				FE85D47C228ECE6F00AD146B /* GenericError.swift in Sources */,
@@ -395,16 +456,19 @@
 				FE413E57228E91EB00094EB2 /* AppDelegate.swift in Sources */,
 				FE85D495228F11A900AD146B /* AsyncOperation.swift in Sources */,
 				FE413E96228E9AA100094EB2 /* Coordinator.swift in Sources */,
+				FEC86DBB229040A90031FB18 /* LinksListPresenter.swift in Sources */,
 				FE85D487228ED51600AD146B /* ImageUploadingPresenter.swift in Sources */,
 				FE85D490228F023000AD146B /* UIViewController+erroArlert.swift in Sources */,
 				FE413EA7228EAC2D00094EB2 /* ImageCollectionViewCell.swift in Sources */,
 				FE85D471228EC50B00AD146B /* DisplayedAsset.swift in Sources */,
+				FEC86DBD229041520031FB18 /* LinksListViewController.swift in Sources */,
 				FE85D498228F178800AD146B /* DataBaseService.swift in Sources */,
 				FE413E9D228E9BA000094EB2 /* UIViewController+storyboard.swift in Sources */,
 				FE85D4C8228F219200AD146B /* DBLink+constructor.swift in Sources */,
 				FE85D476228ECD5800AD146B /* Request.swift in Sources */,
 				FE85D473228ECD0A00AD146B /* NetworkService.swift in Sources */,
 				FE85D4C1228F19E900AD146B /* CoreDataManager.swift in Sources */,
+				FEC86DB92290405F0031FB18 /* DisplayedLink.swift in Sources */,
 				FE85D48B228EF36A00AD146B /* UploadImageRequest.swift in Sources */,
 				FE85D48E228F01E100AD146B /* Errorable.swift in Sources */,
 				FE413EA0228E9EBC00094EB2 /* ImageListPresenter.swift in Sources */,

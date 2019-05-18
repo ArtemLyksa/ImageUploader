@@ -13,15 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     private var coordinator: MainCoordinator?
+    private var dbService: DataBaseService?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        coordinator = MainCoordinator(window: window)
+        dbService = DataBaseService(manager: CoreDataManager())
+        coordinator = MainCoordinator(window: window, dbService: dbService!)
         coordinator?.start()
         
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        dbService?.synchronize()
     }
     
 }

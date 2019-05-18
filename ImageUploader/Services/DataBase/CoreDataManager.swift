@@ -74,4 +74,7 @@ extension CoreDataManager: DataBaseManager {
         return (try? context.fetch(request))?.isEmpty == false
     }
     
+    func synchronize() {
+        try? context.save()
+    }
 }

@@ -8,19 +8,36 @@
 
 import UIKit
 
+protocol ImagesListNavigationDelegate {
+    func navigateToLinksScene()
+}
+
 struct ImagesListCoordinator: Coordinator {
     
     private let presenter: UINavigationController
     private let viewController: ImagesListViewController
+    private let dbService: DataBaseService
     
-    init(presenter: UINavigationController) {
+    init(presenter: UINavigationController, dbService: DataBaseService) {
         self.presenter = presenter
+        self.dbService = dbService
         self.viewController = ImagesListViewController.instantiate()
+        viewController.navigationDelegate = self
         viewController.presenter = ImagesListPresenter(photoService: PhotoService())
-        viewController.uploadingPresenter = ImageUploadingPresenter(networkService: NetworkService())
+        viewController.uploadingPresenter = ImageUploadingPresenter(networkService: NetworkService(),
+                                                                    dbService: dbService)
     }
     
     func start() {
         presenter.pushViewController(viewController, animated: true)
     }
+}
+
+extension ImagesListCoordinator: ImagesListNavigationDelegate {
+    
+    func navigateToLinksScene() {
+        let linksCoordinator = LinksListCoordinator(presenter: presenter, dbService: dbService)
+        linksCoordinator.start()
+    }
+    
 }
