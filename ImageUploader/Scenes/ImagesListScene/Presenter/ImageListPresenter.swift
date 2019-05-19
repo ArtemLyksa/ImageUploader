@@ -9,19 +9,22 @@
 import Foundation
 import Photos
 
-struct ImagesListPresenter {
+class ImagesListPresenter {
     
+    var assetsChangedHandler: () -> (Void) = { }
+    private(set) var assets: [DisplayedAsset] = [] {
+        didSet {
+            assetsChangedHandler()
+        }
+    }
     private let photoService: PhotoService
-    
-    lazy var assets: [DisplayedAsset] = {
-        return photoService.fetchAllAssets().map({ DisplayedAsset(asset: $0) })
-    }()
     
     init(photoService: PhotoService) {
         self.photoService = photoService
+        getAssets()
     }
     
-    mutating func asset(for indexPath: IndexPath, size: CGSize, result: @escaping (DisplayedAsset) -> Void) {
+    func asset(for indexPath: IndexPath, size: CGSize, result: @escaping (DisplayedAsset) -> Void) {
         let displayedAsset = assets[indexPath.row]
         
         if displayedAsset.image != nil {
@@ -33,6 +36,12 @@ struct ImagesListPresenter {
             displayedAsset.image = image
             result(displayedAsset)
         }
-        
+    }
+    
+    private func getAssets() {
+        photoService.fetchAllAssets { [weak self] assets in
+            guard let self = self else { return }
+            self.assets = assets.map({ DisplayedAsset(asset: $0) })
+        }
     }
 }

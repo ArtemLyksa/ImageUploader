@@ -23,7 +23,7 @@ struct ImagesListCoordinator: Coordinator {
         self.dbService = dbService
         self.viewController = ImagesListViewController.instantiate()
         viewController.navigationDelegate = self
-        viewController.presenter = ImagesListPresenter(photoService: PhotoService())
+        viewController.listPresenter = ImagesListPresenter(photoService: PhotoService())
         viewController.uploadingPresenter = ImageUploadingPresenter(networkService: NetworkService(),
                                                                     dbService: dbService)
     }

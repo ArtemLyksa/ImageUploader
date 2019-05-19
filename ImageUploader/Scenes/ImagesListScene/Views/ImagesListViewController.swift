@@ -10,7 +10,7 @@ import UIKit
 
 class ImagesListViewController: UIViewController, Errorable {
     
-    var presenter: ImagesListPresenter!
+    var listPresenter: ImagesListPresenter!
     var uploadingPresenter: ImageUploadingPresenter!
     var navigationDelegate: ImagesListNavigationDelegate?
     
@@ -23,6 +23,12 @@ class ImagesListViewController: UIViewController, Errorable {
     }
     
     private func confiureScene() {
+        listPresenter.assetsChangedHandler = { 
+            OperationQueue.main.addOperation({ [weak self] in
+                self?.collectionView.reloadData()
+            })
+        }
+        
         uploadingPresenter.uploadingAssetChanged = { indexPath in
             OperationQueue.main.addOperation({ [weak self] in
                 self?.collectionView.reloadItems(at: [indexPath])
@@ -47,13 +53,13 @@ class ImagesListViewController: UIViewController, Errorable {
 extension ImagesListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.assets.count
+        return listPresenter.assets.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.getCell(ofType: ImageCollectionViewCell.self, for: indexPath)
         
-        presenter.asset(for: indexPath, size: cell.frame.size) { image in
+        listPresenter.asset(for: indexPath, size: cell.frame.size) { image in
             cell.configure(with: image)
         }
         
@@ -65,7 +71,7 @@ extension ImagesListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        uploadingPresenter.uploadAsset(presenter.assets[indexPath.row],
+        uploadingPresenter.uploadAsset(listPresenter.assets[indexPath.row],
                                        indexPath: indexPath)
     }
 }

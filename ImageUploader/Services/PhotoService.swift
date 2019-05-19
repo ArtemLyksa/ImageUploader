@@ -18,15 +18,25 @@ struct PhotoService {
         self.qos = qos
     }
     
-    func fetchAllAssets() -> [PHAsset] {
-        let allPhotosOptions = PHFetchOptions()
-        allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-        var assets: [PHAsset] = []
+    func fetchAllAssets(result: @escaping ([PHAsset]) -> Void) {
         
-        PHAsset.fetchAssets(with: allPhotosOptions).enumerateObjects { (asset, _, _) in
-            assets.append(asset)
+        PHPhotoLibrary.requestAuthorization { status in
+            var assets: [PHAsset] = []
+            
+            guard status == .authorized else {
+                result(assets)
+                return
+            }
+            
+            let allPhotosOptions = PHFetchOptions()
+            allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+            
+            
+            PHAsset.fetchAssets(with: allPhotosOptions).enumerateObjects { (asset, _, _) in
+                assets.append(asset)
+            }
+            result(assets)
         }
-        return assets
     }
     
     func getImage(from asset: PHAsset,
