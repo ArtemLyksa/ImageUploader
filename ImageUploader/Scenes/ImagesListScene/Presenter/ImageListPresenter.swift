@@ -40,8 +40,7 @@ class ImagesListPresenter {
     
     private func getAssets() {
         photoService.fetchAllAssets { [weak self] assets in
-            guard let self = self else { return }
-            self.assets = assets.map({ DisplayedAsset(asset: $0) })
+            self?.assets = assets.map({ DisplayedAsset(asset: $0) })
         }
     }
 }
