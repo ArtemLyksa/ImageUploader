@@ -36,7 +36,9 @@ struct ImagesListCoordinator: Coordinator {
 extension ImagesListCoordinator: ImagesListNavigationDelegate {
     
     func navigateToLinksScene() {
-        let linksCoordinator = LinksListCoordinator(presenter: presenter, dbService: dbService)
+        let linksCoordinator = LinksListCoordinator(presenter: presenter,
+                                                    dbService: dbService,
+                                                    linkService: LinkService(strategy: SafariLinkStrategy()))
         linksCoordinator.start()
     }
     

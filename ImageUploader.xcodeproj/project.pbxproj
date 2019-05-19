@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE0C2BCC22917A3B00500D31 /* LinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0C2BCB22917A3B00500D31 /* LinkService.swift */; };
 		FE413E57228E91EB00094EB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE413E56228E91EB00094EB2 /* AppDelegate.swift */; };
 		FE413E5C228E91EB00094EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE413E5A228E91EB00094EB2 /* Main.storyboard */; };
 		FE413E5E228E91ED00094EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE413E5D228E91ED00094EB2 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE0C2BCB22917A3B00500D31 /* LinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkService.swift; sourceTree = "<group>"; };
 		FE413E53228E91EB00094EB2 /* ImageUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE413E56228E91EB00094EB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE413E5B228E91EB00094EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE0C2BCA22917A3100500D31 /* Linking */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C2BCB22917A3B00500D31 /* LinkService.swift */,
+			);
+			path = Linking;
+			sourceTree = "<group>";
+		};
 		FE413E4A228E91EB00094EB2 = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +235,7 @@
 		FE413EA1228EA08D00094EB2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FE0C2BCA22917A3100500D31 /* Linking */,
 				FE85D493228F119800AD146B /* Operations */,
 				FE85D496228F176E00AD146B /* DataBase */,
 				FE85D474228ECD3A00AD146B /* Networking */,
@@ -473,6 +484,7 @@
 				FE85D48E228F01E100AD146B /* Errorable.swift in Sources */,
 				FE413EA0228E9EBC00094EB2 /* ImageListPresenter.swift in Sources */,
 				FE85D4C6228F1F4C00AD146B /* AssetLink.swift in Sources */,
+				FE0C2BCC22917A3B00500D31 /* LinkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +640,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyksa.artem.ImageUploader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -647,7 +659,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyksa.artem.ImageUploader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -13,10 +13,10 @@ struct LinksListCoordinator: Coordinator {
     private let presenter: UINavigationController
     private let viewController: LinksListViewController
     
-    init(presenter: UINavigationController, dbService: DataBaseService) {
+    init(presenter: UINavigationController, dbService: DataBaseService, linkService: LinkService) {
         self.presenter = presenter
         self.viewController = LinksListViewController.instantiate()
-        viewController.presenter = LinksListPresenter(dbService: dbService)
+        viewController.presenter = LinksListPresenter(dbService: dbService, linkService: linkService)
     }
     
     func start() {

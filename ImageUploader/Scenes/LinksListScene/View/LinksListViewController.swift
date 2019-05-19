@@ -43,6 +43,6 @@ extension LinksListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //TODO: open link in a browser
+        presenter.selectLink(at: indexPath)
     }
 }
