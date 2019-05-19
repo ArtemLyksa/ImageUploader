@@ -14,21 +14,21 @@ class ImagesListViewController: UIViewController, Errorable {
     var uploadingPresenter: ImageUploadingPresenter!
     var navigationDelegate: ImagesListNavigationDelegate?
     
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        confiureScene()
+        configureScene()
         setupNavigationBar()
     }
     
-    private func confiureScene() {
-        listPresenter.assetsChangedHandler = { 
+    private func configureScene() {
+        listPresenter.assetsChangedHandler = {
             OperationQueue.main.addOperation({ [weak self] in
                 self?.collectionView.reloadData()
             })
         }
-        
+
         uploadingPresenter.uploadingAssetChanged = { indexPath in
             OperationQueue.main.addOperation({ [weak self] in
                 self?.collectionView.reloadItems(at: [indexPath])
@@ -43,6 +43,8 @@ class ImagesListViewController: UIViewController, Errorable {
                                              target: self,
                                              action: #selector(linksBarButtonAction(sender:)))
         navigationItem.rightBarButtonItem = linksBarButton
+        
+        navigationItem.title = "Your photos".localized
     }
     
      @objc private func linksBarButtonAction(sender: UIBarButtonItem) {

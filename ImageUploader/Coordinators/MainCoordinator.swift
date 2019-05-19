@@ -10,7 +10,7 @@ import UIKit
 
 struct MainCoordinator: Coordinator {
     
-    private let window: UIWindow?
+    private weak var window: UIWindow?
     private let rootViewController: UINavigationController
     private let imagesListCoordinator: ImagesListCoordinator
     

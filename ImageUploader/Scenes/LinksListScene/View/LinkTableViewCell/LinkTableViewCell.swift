@@ -10,7 +10,7 @@ import UIKit
 
 class LinkTableViewCell: UITableViewCell {
 
-    @IBOutlet var label: UILabel!
+    @IBOutlet weak var label: UILabel!
     
     func configure(with model: DisplayedLink) {
         label.attributedText = NSAttributedString(string: model.value,

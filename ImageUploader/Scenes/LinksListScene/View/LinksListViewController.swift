@@ -10,18 +10,23 @@ import UIKit
 
 class LinksListViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     var presenter: LinksListPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewsOnLoad()
+        setupNavigationBar()
     }
     
     private func setupViewsOnLoad() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
         tableView.tableFooterView = UIView()
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "Your links".localized
     }
     
 }

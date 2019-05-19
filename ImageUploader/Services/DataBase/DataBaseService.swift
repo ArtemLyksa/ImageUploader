@@ -17,7 +17,7 @@ protocol DataBaseManager {
     func synchronize()
 }
 
-class DataBaseService {
+struct DataBaseService {
     
     let manager: DataBaseManager
     

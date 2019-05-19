@@ -29,11 +29,12 @@ class ImageUploadingPresenter {
     func uploadAsset(_ asset: DisplayedAsset, indexPath: IndexPath) {
         
         if asset.state == .uploaded {
+            errorOccurred(.imageAlreadyUploaded)
             return
         }
         
         if dbService.linkExists(id: asset.id) {
-            //TODO: Show alert
+            errorOccurred(.imageAlreadyUploaded)
             asset.state = .uploaded
             return
         }
